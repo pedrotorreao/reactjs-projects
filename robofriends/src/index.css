@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #59c173; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #59c173, #a17fe0, #5d26c1); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #59c173, #a17fe0, #5d26c1);
+}
