@@ -5,12 +5,17 @@ import UserList from './components/UserList/UserList';
 
 import './App.css';
 
-function App() {
-  const [userData, setUserData] = useState([
-    { username: 'Pedro', age: 28, id: 'usr1' },
-    { username: 'Carol', age: 20, id: 'usr2' }
-  ]);
+// array of dummy user objects:
+const DUMMY_USERS = [
+  { username: 'Pedro', age: 28, id: 'usr1' },
+  { username: 'Carol', age: 20, id: 'usr2' }
+];
 
+function App() {
+  const [userData, setUserData] = useState(DUMMY_USERS);
+
+  // this function is passed down to 'UserInput' as a prop in order
+  // to retrieve the new user data:
   const createUserHandler = (enteredUserData) => {
     setUserData((prevUsers) => {
       const updatedUsers = [...prevUsers];
@@ -24,10 +29,13 @@ function App() {
     });
   };
 
+  // content to be loaded below the input form:
+  // - if no users are added, it defaults to a message
   let content = (
     <p style={{ textAlign: 'center' }}>No users yet. Maybe add a few?</p>
   );
-
+  // - otherwise, it loads a 'UserList' component containing all the
+  // 'UserItem's components added through the 'UserInput' component:
   if (userData.length > 0) {
     content = <UserList items={userData} />;
   }
