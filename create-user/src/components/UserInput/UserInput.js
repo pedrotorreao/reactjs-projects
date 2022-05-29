@@ -4,6 +4,7 @@ import Button from '../UI/Button';
 
 import './UserInput.css';
 
+// UserInput - stateful component
 const UserInput = (props) => {
   // useState always return a (1)variable and a (2)function:
   // (1) points to the managed state variable
