@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Notification from '../Notification/Notification';
 import Button from '../UI/Button';
 
 import './UserInput.css';
@@ -11,6 +12,7 @@ const UserInput = (props) => {
   // (2) can be called to update said variable
   const [newUsername, setNewUsername] = useState('');
   const [newUserAge, setNewUserAge] = useState('');
+  const [error, setError] = useState();
 
   // listen for changes in the form inputs, whenever one
   // of the input fields changes, its specific function
@@ -26,6 +28,23 @@ const UserInput = (props) => {
   const formSubmitHandler = (event) => {
     // prevent reload of the page once the form is submitted:
     event.preventDefault();
+
+    // check if the data entered is valid:
+    if (newUsername.trim().length === 0 || newUserAge.trim().length === 0) {
+      setError({
+        title: 'Invalid input',
+        message: 'Please enter non-empty values for name and age.'
+      });
+      return;
+    }
+    if (+newUserAge < 1) {
+      setError({
+        title: 'Invalid age value!',
+        message: 'Age must be greater than zero.'
+      });
+      return;
+    }
+
     // create new user object w/ the newly submitted data:
     const userData = {
       username: newUsername,
@@ -43,26 +62,40 @@ const UserInput = (props) => {
     setNewUserAge('');
   };
 
+  // reset error values:
+  const errorHandler = () => {
+    setError(null);
+  };
+
   return (
-    <form onSubmit={formSubmitHandler} style={{ textAlign: 'center' }}>
-      <div className='form-control'>
-        <label>Username</label>
-        <input
-          type='text'
-          placeholder='enter name'
-          value={newUsername}
-          onChange={usernameChangeHandler}
+    <section>
+      {error && (
+        <Notification
+          title={error.title}
+          message={error.message}
+          onClick={errorHandler}
         />
-        <label>Age (Years)</label>
-        <input
-          type='number'
-          placeholder='enter age'
-          value={newUserAge}
-          onChange={userAgeChangeHandler}
-        />
-      </div>
-      <Button type='submit'>Add User</Button>
-    </form>
+      )}
+      <form onSubmit={formSubmitHandler} style={{ textAlign: 'center' }}>
+        <div className='form-control'>
+          <label>Username</label>
+          <input
+            type='text'
+            placeholder='enter name'
+            value={newUsername}
+            onChange={usernameChangeHandler}
+          />
+          <label>Age (Years)</label>
+          <input
+            type='number'
+            placeholder='enter age'
+            value={newUserAge}
+            onChange={userAgeChangeHandler}
+          />
+        </div>
+        <Button type='submit'>Add User</Button>
+      </form>
+    </section>
   );
 };
 
