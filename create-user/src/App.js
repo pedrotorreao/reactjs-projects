@@ -17,6 +17,9 @@ function App() {
   // this function is passed down to 'UserInput' as a prop in order
   // to retrieve the new user data:
   const createUserHandler = (enteredUserData) => {
+    // since our state update relies on the previous state, we need
+    // to specify this in the 'setUserData' by passing it a function
+    // to do that:
     setUserData((prevUsers) => {
       const updatedUsers = [...prevUsers];
 
