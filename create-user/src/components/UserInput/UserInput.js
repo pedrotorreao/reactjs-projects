@@ -1,3 +1,7 @@
+// TODO:
+//  - use React Portals for the overlay and the error modal
+//  - use ReactDOM References to deal with the user input, if applicable
+
 import React, { useState } from 'react';
 
 import Notification from '../Notification/Notification';
