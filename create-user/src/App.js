@@ -44,12 +44,12 @@ function App() {
   }
 
   return (
-    <div>
+    <React.Fragment>
       <section className='user-form'>
         <UserInput onCreateUser={createUserHandler} />
       </section>
       <section className='users'>{content}</section>
-    </div>
+    </React.Fragment>
   );
 }
 

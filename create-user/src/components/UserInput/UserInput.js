@@ -68,7 +68,7 @@ const UserInput = (props) => {
   };
 
   return (
-    <section>
+    <React.Fragment>
       {error && (
         <Notification
           title={error.title}
@@ -95,7 +95,7 @@ const UserInput = (props) => {
         </div>
         <Button type='submit'>Add User</Button>
       </form>
-    </section>
+    </React.Fragment>
   );
 };
 

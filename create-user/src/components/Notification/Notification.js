@@ -11,7 +11,7 @@ const Notification = (props) => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <div className='backdrop' onClick={onCloseHandler}></div>
       <div className={`notification modal`}>
         <header className='header'>
@@ -25,7 +25,7 @@ const Notification = (props) => {
           Close
         </Button>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
