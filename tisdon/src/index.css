@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;500;700&family=Quicksand:wght@400;500;600&display=swap');
+
+:root {
+  --bg-default-color: rgb(24, 24, 24);
+  --fn-default-tx-color: rgb(192, 194, 196);
+  --fn-default-hd_color: rgb(72, 196, 47);
+}
+
+*,
+*::after,
+*::before {
+  /* box-sizing: border-box; */
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: 'Inconsolata', sans-serif;
+  /*
+    Default size for normal text, like paragraphs: 16px (16px = 1em)
+    In order to simplify future size calculations, let's make it so 10px = 1em.
+    For that, we make the 'font-size' property equal to 62.5% its default value:
+      100%  -  16px
+      x     -  10px  --> (16px)*x = (10px)*(100%) --> x = (0.625) * 100% = 62.5%
+
+      10px/16px = 62.5% >> 1rem = 10px 
+  */
+  font-size: 62.5%;
+  color: var(--fn-default-hd_color);
+}
+
+body {
+  box-sizing: border-box;
+  margin: 1rem;
+  padding: 4rem;
+  font-size: 2rem;
+  background-color: var(--bg-default-color);
+}
