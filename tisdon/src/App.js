@@ -44,7 +44,6 @@ function App() {
     <React.Fragment>
       <NewTasks onAddNewTask={addTaskHandler} />
       <Tasks tasks={tasks} />
-      <p style={{ textAlign: 'center' }}>Hello, old friend!</p>
     </React.Fragment>
   );
 }
