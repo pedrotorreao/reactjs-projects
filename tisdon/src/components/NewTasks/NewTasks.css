@@ -1,0 +1,28 @@
+.new-task {
+  background-color: var(--card-default-dark-color);
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 60rem;
+  max-width: 95%;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.new-task button {
+  display: block;
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid var(--bg-default-dark-color);
+  background-color: var(--bg-default-dark-color);
+  color: var(--fn-default-tx-color);
+  border-radius: 10px;
+
+}
+
+.new-task button:hover,
+.new-task button:active {
+  background-color: #215472;
+  border-color: #d8ccdd;
+}
