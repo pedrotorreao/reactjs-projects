@@ -42,8 +42,12 @@ function App() {
 
   return (
     <React.Fragment>
-      <NewTasks onAddNewTask={addTaskHandler} />
-      <Tasks tasks={tasks} />
+      <section className='task-input'>
+        <NewTasks onAddNewTask={addTaskHandler} />
+      </section>
+      <section className='task-list'>
+        <Tasks tasks={tasks} />
+      </section>
     </React.Fragment>
   );
 }

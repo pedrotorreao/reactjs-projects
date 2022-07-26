@@ -1,6 +1,8 @@
 import React from 'react';
 import TaskInput from './TaskInput';
 
+import './NewTasks.css';
+
 const NewTask = (props) => {
   const saveTaskDataHandler = (newTaskData) => {
     const taskData = {

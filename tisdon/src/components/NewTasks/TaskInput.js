@@ -63,6 +63,10 @@ const TaskInput = (props) => {
             <option value='high'>high</option>
           </select>
         </div>
+
+        <div className='new-task__actions'>
+          <button type='submit'>Add Task</button>
+        </div>
       </div>
     </form>
   );
