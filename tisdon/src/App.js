@@ -42,10 +42,10 @@ function App() {
 
   return (
     <React.Fragment>
-      <section className='task-input'>
+      <section>
         <NewTasks onAddNewTask={addTaskHandler} />
       </section>
-      <section className='task-list'>
+      <section>
         <Tasks tasks={tasks} />
       </section>
     </React.Fragment>
