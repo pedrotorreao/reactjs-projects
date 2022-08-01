@@ -42,12 +42,8 @@ function App() {
 
   return (
     <React.Fragment>
-      <section>
-        <NewTasks onAddNewTask={addTaskHandler} />
-      </section>
-      <section>
-        <Tasks tasks={tasks} />
-      </section>
+      <NewTasks onAddNewTask={addTaskHandler} />
+      <Tasks tasks={tasks} />
     </React.Fragment>
   );
 }
