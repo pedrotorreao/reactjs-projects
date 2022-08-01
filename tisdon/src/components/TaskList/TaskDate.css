@@ -1,0 +1,26 @@
+.task-date {
+  display: flex;
+  flex-direction: column;
+  width: 6.5rem;
+  height: 6.5rem;
+  border: 1px solid #ececec;
+  background-color: #041f3d;
+  color: white;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-date__month {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.task-date__year {
+  font-size: 1.75rem;
+}
+
+.task-date__day {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
