@@ -13,7 +13,7 @@ const TaskList = (props) => {
 
   return (
     <div>
-      <h2>Active Tasks</h2>
+      <label>active tasks</label>
       <ul className='task-list'>
         {props.tasks.map((currentTask) => (
           <TaskItem
