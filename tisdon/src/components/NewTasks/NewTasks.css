@@ -6,7 +6,7 @@
   max-width: 95%;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 1px 8px rgba(4, 209, 245, 0.651);
+  box-shadow: 0 1px 8px rgba(4, 90, 104, 0.411);
 }
 
 .new-task button {
@@ -15,7 +15,7 @@
   cursor: pointer;
   padding: 1rem 2rem;
   border: 1px solid var(--bg-default-dark-color);
-  background-color: var(--bg-default-dark-color);
+  background-color: rgba(42, 203, 228, 0.39);
   color: var(--fn-default-tx-color);
   border-radius: 10px;
 
