@@ -7,8 +7,8 @@ import './Tasks.css';
 const Tasks = (props) => {
   return (
     <div>
-      <Card className='tasks'>
-        <TaskList tasks={props.tasks} />
+      <Card className='tasks__active'>
+        <TaskList tasks={props.tasks} isActive={true} />
       </Card>
     </div>
   );
