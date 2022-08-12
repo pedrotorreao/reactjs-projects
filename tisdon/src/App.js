@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Tasks from './components/TaskList/Tasks';
 import NewTasks from './components/NewTasks/NewTasks';
+import TaskComplete from './components/TaskList/TaskComplete';
 
 // dummy data for task list --delete later:
 const DUMMY_TASKS = [
@@ -31,6 +32,7 @@ function App() {
   // (2) can be called to update said variable
   // individual state slices:
   const [tasks, setTasks] = useState(DUMMY_TASKS);
+  const [finishedTasks, setFinishedTasks] = useState(DUMMY_TASKS);
 
   // this function is passed down to 'NewTasks' as a prop in order
   // to retrieve the new task' data:
@@ -40,10 +42,17 @@ function App() {
     });
   };
 
+  const completeTaskHandler = (taskData) => {
+    setFinishedTasks((prevTasks) => {
+      return [taskData, ...prevTasks];
+    });
+  };
+
   return (
     <React.Fragment>
       <NewTasks onAddNewTask={addTaskHandler} />
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} onCompleteTask={completeTaskHandler} />
+      <TaskComplete tasksDone={finishedTasks} />
     </React.Fragment>
   );
 }

@@ -11,7 +11,7 @@ const TaskList = (props) => {
     );
   }
 
-  return (
+  let content = props.isActive ? (
     <div>
       <label>active tasks</label>
       <ul className='task-list'>
@@ -25,7 +25,23 @@ const TaskList = (props) => {
         ))}
       </ul>
     </div>
+  ) : (
+    <div>
+      <label>finished tasks</label>
+      <ul className='task-list'>
+        {props.tasks.map((currentTask) => (
+          <TaskItem
+            key={currentTask.id}
+            title={currentTask.task}
+            date={currentTask.duedate}
+            priority={currentTask.priority}
+          />
+        ))}
+      </ul>
+    </div>
   );
+
+  return <div>{content}</div>;
 };
 
 export default TaskList;
