@@ -41,6 +41,15 @@
   padding: 0.5rem;
   border-radius: 10px;
 }
+.task-item__priority.low-priority {
+  background-color: var(--bg-priority-low-color);
+}
+.task-item__priority.medium-priority {
+  background-color: var(--bg-priority-medium-color);
+}
+.task-item__priority.high-priority {
+  background-color: var(--bg-priority-high-color);
+}
 
 /* @media (min-width: 580px) {
   .task-item__description {

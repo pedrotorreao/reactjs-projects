@@ -5,6 +5,10 @@
   --bg-default-dark-color: #29313a;             /* default dark background */
   --bg-default-light-color: #f7f7f7;            /* default light background */
 
+  --bg-priority-low-color: rgba(6, 207, 243, 0.938);
+  --bg-priority-medium-color: rgba(214, 218, 22, 0.925);
+  --bg-priority-high-color: rgb(233, 64, 64);
+
   --card-default-dark-color: #3c6792b7;         /* default card color */
   --card-active-dark-color: #6452a7b7;
   --card-completed-dark-color: #9e9ea58e;       /* completed card color */
