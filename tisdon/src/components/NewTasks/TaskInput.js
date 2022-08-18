@@ -6,7 +6,12 @@ const TaskInput = (props) => {
   const [newDueDate, setNewDueDate] = useState('');
   const [newPriority, setNewPriority] = useState('low');
 
+  const [isValidTitle, setIsValidTitle] = useState(true);
+
   const titleChangeHandler = (event) => {
+    if (event.target.value.trim().length > 0) {
+      setIsValidTitle(true);
+    }
     setNewTitle(event.target.value);
   };
   const dueDateChangeHandler = (event) => {
@@ -18,6 +23,11 @@ const TaskInput = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+
+    if (newTitle.trim().length === 0) {
+      setIsValidTitle(false);
+      return;
+    }
 
     const newTaskData = {
       task: newTitle,
@@ -36,7 +46,7 @@ const TaskInput = (props) => {
     <form onSubmit={submitHandler}>
       <div className='new-task__controls'>
         <div className='new-task__control'>
-          <label>task</label>
+          <label>task title</label>
           <input type='text' value={newTitle} onChange={titleChangeHandler} />
         </div>
 
