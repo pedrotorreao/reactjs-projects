@@ -7,6 +7,12 @@
   margin: 1rem 0;
   background-color: #54b33144;
 }
+.task-item.active {
+  background-color: #54b33144;
+}
+.task-item.inactive {
+  background-color: #7e8081f5;
+}
 
 .task-item__description {
   width: 95%; /* ?? */

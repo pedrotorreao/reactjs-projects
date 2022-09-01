@@ -21,6 +21,7 @@ const TaskList = (props) => {
             title={currentTask.task}
             date={currentTask.duedate}
             priority={currentTask.priority}
+            status='active'
           />
         ))}
       </ul>
@@ -35,6 +36,7 @@ const TaskList = (props) => {
             title={currentTask.task}
             date={currentTask.duedate}
             priority={currentTask.priority}
+            status='inactive'
           />
         ))}
       </ul>
