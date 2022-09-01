@@ -3,7 +3,7 @@ import './TaskInput.css';
 
 const TaskInput = (props) => {
   const [newTitle, setNewTitle] = useState('');
-  const [newDueDate, setNewDueDate] = useState('');
+  const [newDueDate, setNewDueDate] = useState(new Date());
   const [newPriority, setNewPriority] = useState('low');
 
   const [isValidTitle, setIsValidTitle] = useState(true);
@@ -38,14 +38,16 @@ const TaskInput = (props) => {
     props.onSaveTaskData(newTaskData);
 
     setNewTitle('');
-    setNewDueDate('');
-    setNewPriority('');
+    // setNewDueDate('');
+    // setNewPriority('');
   };
+
+  let cl = isValidTitle ? 'new-task__control' : 'new-task__control invalid'; //'new-task__control invalid'
 
   return (
     <form onSubmit={submitHandler}>
       <div className='new-task__controls'>
-        <div className='new-task__control'>
+        <div className={cl}>
           <label>task title</label>
           <input type='text' value={newTitle} onChange={titleChangeHandler} />
         </div>
