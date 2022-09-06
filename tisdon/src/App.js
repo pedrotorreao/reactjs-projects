@@ -31,13 +31,16 @@ function App() {
   // (1) points to the managed state variable
   // (2) can be called to update said variable
   // individual state slices:
-  const [tasks, setTasks] = useState(DUMMY_TASKS);
+  //const [tasks, setTasks] = useState(DUMMY_TASKS);
+  const [tasks, setTasks] = useState([]);
   const [finishedTasks, setFinishedTasks] = useState(DUMMY_TASKS);
 
   // this function is passed down to 'NewTasks' as a prop in order
   // to retrieve the new task' data:
   const addTaskHandler = (taskData) => {
     setTasks((prevTasks) => {
+      // if (prevTasks) return [taskData, ...prevTasks];
+      // return [taskData];
       return [taskData, ...prevTasks];
     });
   };
