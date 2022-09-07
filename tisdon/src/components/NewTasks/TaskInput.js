@@ -15,6 +15,7 @@ const TaskInput = (props) => {
     setNewTitle(event.target.value);
   };
   const dueDateChangeHandler = (event) => {
+    console.log(event.target.value.replace(/-/g, '/'));
     setNewDueDate(event.target.value);
   };
   const priorityChangeHandler = (event) => {
@@ -38,16 +39,14 @@ const TaskInput = (props) => {
     props.onSaveTaskData(newTaskData);
 
     setNewTitle('');
-    // setNewDueDate('');
-    // setNewPriority('');
+    setNewDueDate(new Date());
+    setNewPriority('low');
   };
-
-  let cl = isValidTitle ? 'new-task__control' : 'new-task__control invalid'; //'new-task__control invalid'
 
   return (
     <form onSubmit={submitHandler}>
       <div className='new-task__controls'>
-        <div className={cl}>
+        <div className={`new-task__control ${!isValidTitle ? 'invalid' : ''}`}>
           <label>task title</label>
           <input type='text' value={newTitle} onChange={titleChangeHandler} />
         </div>
@@ -69,6 +68,7 @@ const TaskInput = (props) => {
             name='priority'
             id='priority'
             onChange={priorityChangeHandler}
+            value={newPriority}
           >
             <option value='low'>low</option>
             <option value='medium'>medium</option>
