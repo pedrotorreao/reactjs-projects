@@ -1,5 +1,5 @@
 .tasks__active {
-  background-color: var(--card-default-dark-color); 
+  background-color: #03803793; /* --card-default-dark-color */
   padding: 1rem;
   margin: 2rem auto;
   width: 60rem;

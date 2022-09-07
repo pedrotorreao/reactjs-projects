@@ -1,14 +1,16 @@
 .task-item {
   display: flex;
-  /* flex-direction: row; */
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
   margin: 1rem 0;
-  background-color: #54b33144;
 }
 .task-item.active {
-  background-color: #54b33144;
+  background-color: var(--card-active-dark-color);
+  cursor: pointer;
+}
+.task-item.active:hover {
+  background-color: #3e9276b7;  
 }
 .task-item.inactive {
   background-color: #7e8081f5;
