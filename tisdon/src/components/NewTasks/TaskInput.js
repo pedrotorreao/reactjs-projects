@@ -63,7 +63,7 @@ const TaskInput = (props) => {
         </div>
 
         <div className='new-task__control'>
-          <label for='priority'>priority</label>
+          <label htmlFor='priority'>priority</label>
           <select
             name='priority'
             id='priority'
