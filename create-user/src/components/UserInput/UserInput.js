@@ -67,7 +67,9 @@ const UserInput = (props) => {
   };
 
   // reset error values:
-  const errorHandler = () => {
+  const errorHandler = (props) => {
+    console.log('Ayooo, Silver!!');
+    // props.event.preventDefault();
     setError(null);
   };
 
