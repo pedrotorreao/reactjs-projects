@@ -7,7 +7,8 @@ const NewTask = (props) => {
   const saveTaskDataHandler = (newTaskData) => {
     const taskData = {
       ...newTaskData,
-      id: (Math.floor(Math.random() * 1000) + 1).toString()
+      id: (Math.floor(Math.random() * 1000) + 1).toString(),
+      finished: false
     };
 
     props.onAddNewTask(taskData);

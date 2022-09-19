@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import NewTask from '../NewTasks/NewTasks';
 import Button from './Button';
 import './EditModal.css';
 
@@ -19,10 +20,10 @@ const Overlay = (props) => {
       </div>
       <footer className='actions'></footer>
       <Button type='button' onClick={props.onClick}>
-        Atualizar
+        Update
       </Button>
       <Button type='button' onClick={props.onClick}>
-        Cancelar
+        Cancel
       </Button>
     </div>
   );
